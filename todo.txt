@@ -1,0 +1,151 @@
+# https://webhook.site/
+
+<?php
+/**
+ * Plugin Name:       Click to Copy
+ * Description:       The Click To Copy Block plugin offers a seamless Gutenberg block for one-click content copying.
+ * Version:           1.0.4
+ * Author:            bPlugins
+ * Author URI:        http://bplugins.com
+ * License:           GPLv3
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.txt
+ * Text Domain:       clipboard
+ * @fs_premium_only   /freemius,
+ * @fs_free_only      /freemius-lite, /inc/upgradePage.php
+ */
+
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+
+if ( function_exists( 'ctc_fs' ) ) {
+
+	register_activation_hook( __FILE__, function () {
+		if ( is_plugin_active( 'click-to-copy/click-to-copy-block.php' ) ) {
+			deactivate_plugins( 'click-to-copy/click-to-copy-block.php' );
+		}
+		if ( is_plugin_active( 'click-to-copy-pro/click-to-copy-block.php' ) ) {
+			deactivate_plugins( 'click-to-copy-pro/click-to-copy-block.php' );
+		}
+	});
+
+} 
+else {
+
+	define( 'CLICK_TO_COPY_PRO', file_exists( dirname( __FILE__ ) . '/freemius/start.php' ) );
+
+	if ( ! function_exists( 'ctc_fs' ) ) {
+		function ctc_fs() {
+			global $ctc_fs;
+
+			if ( ! isset( $ctc_fs ) ) {
+				if ( CLICK_TO_COPY_PRO ) {
+					require_once dirname( __FILE__ ) . '/freemius/start.php';
+				} else {
+					require_once dirname( __FILE__ ) . '/freemius-lite/start.php';
+				}
+
+				$apbConfig = array(
+					'id'                  => '20412',
+					'slug'                => 'click-to-copy',
+					'premium_slug'        => 'click-to-copy-pro',
+					'type'                => 'plugin',
+					'public_key'          => 'pk_06363f5cbf7f2bdba1337af3d5f8d',
+					'is_premium'          => true,
+					'premium_suffix'      => 'Pro',
+					'has_premium_version' => true,
+					'has_addons'          => false,
+					'has_paid_plans'      => true,
+					'wp_org_gatekeeper'   => 'OA7#BoRiBNqdf52FvzEf!!074aRLPs8fspif$7K1#4u4Csys1fQlCecVcUTOs2mcpeVHi#C2j9d09fOTvbC0HloPT7fFee5WdS3G',
+					'menu'                => array(
+						'slug'       => 'click-to-copy-dashboard',
+						'first-path' => 'tools.php?page=click-to-copy-dashboard#/welcome',
+						'support'    => false,
+						'parent'     => array(
+							'slug' => 'tools.php',
+						),
+					),
+				);
+
+				$ctc_fs = CLICK_TO_COPY_PRO ? fs_dynamic_init( $apbConfig ) : fs_lite_dynamic_init( $apbConfig );
+			}
+
+			return $ctc_fs;
+		}
+
+		// Init Freemius
+		ctc_fs();
+		do_action( 'ctc_fs_loaded' );
+	}
+
+	function ctcIsPremium() {
+		return CLICK_TO_COPY_PRO ? ic_fs()->can_use_premium_code() : false;
+	}
+
+
+	// ---------------- Plugin Class ----------------
+	class CTCB_ClickToCopy {
+		private static $instance;
+
+		private function __construct() {
+			$this->constants_define();
+			add_action( 'init', [ $this, 'onInit' ] );
+             // freemius
+                  add_action('wp_ajax_bpicbPremiumChecker', [$this, 'bpicbPremiumChecker']);
+	 				add_action('wp_ajax_nopriv_bpicbPremiumChecker', [$this, 'bpicbPremiumChecker']);
+					add_action('admin_init', [$this, 'registerSettings']);
+					add_action('rest_api_init', [$this, 'registerSettings']);
+		}
+            function bpicbPremiumChecker(){
+					$nonce = sanitize_text_field($_POST['_wpnonce'] ?? null);
+		
+					if (!wp_verify_nonce($nonce, 'wp_ajax')) {
+						wp_send_json_error('Invalid Request');
+					}
+		
+					wp_send_json_success([
+						'isPipe' => ctcIsPremium()
+						
+					
+						
+					]);
+				}
+		
+				function registerSettings(){
+					register_setting('bpicbUtils', 'bpicbUtils', [
+						'show_in_rest' => [
+							'name' => 'bpicbUtils',
+							'schema' => ['type' => 'string']
+						],
+						'type' => 'string',
+						'default' => wp_json_encode(['nonce' => wp_create_nonce('wp_ajax')]),
+						'sanitize_callback' => 'sanitize_text_field'
+					]);
+				}
+
+
+		public static function get_instance() {
+			if ( self::$instance ) {
+				return self::$instance;
+			}
+			self::$instance = new self();
+			return self::$instance;
+		}
+
+		private function constants_define() {
+			define( 'CTCB_PLUGIN_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.4' );
+			define( 'CTCB_DIR', plugin_dir_url( __FILE__ ) );
+			define( 'CTCB_DIR_PATH', plugin_dir_path( __FILE__ ) );
+			define( 'CTCB_ASSETS_DIR', plugin_dir_url( __FILE__ ) . 'assets/' );
+		}
+
+		public function onInit() {
+			register_block_type( __DIR__ . '/build' );
+
+			wp_set_script_translations( 'ctcb-click-to-copy-editor-script', 'clipboard', plugin_dir_path( __FILE__ ) . 'languages' );
+			wp_set_script_translations( 'ctcb-click-to-copy-view-script', 'clipboard', plugin_dir_path( __FILE__ ) . 'languages' );
+		}
+	}
+
+	// Init Plugin
+	CTCB_ClickToCopy::get_instance();
+}

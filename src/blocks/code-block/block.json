@@ -1,0 +1,124 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ctcb/code-block",
+	"version": "1.0.0",
+	"title": "Code Block",
+	"category": "click-to-copy",
+	"description": "A syntax-highlighted, line-numbered code snippet with a language label, one-click copy, and a slide-in confirmation banner.",
+	"keywords": [
+		"code block",
+		"code",
+		"snippet",
+		"syntax highlight",
+		"copy code",
+		"click to copy",
+		"pre",
+		"developer",
+		"gist"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"language": {
+			"type": "string",
+			"default": "javascript"
+		},
+		"copyLabel": {
+			"type": "string",
+			"default": "Copy code"
+		},
+		"bannerText": {
+			"type": "string",
+			"default": "Copied to clipboard"
+		},
+		"copyText": {
+			"type": "string",
+			"default": "const kit = new CopyKit({ theme: 'aurora' });\nkit.mount('#app');"
+		},
+		"theme": {
+			"type": "string",
+			"default": "default"
+		},
+		"showLanguage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCopyButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"showLineNumbers": {
+			"type": "boolean",
+			"default": true
+		},
+		"styles": {
+			"type": "object",
+			"default": {
+				"stage": {
+					"background": { "type": "solid", "color": "#0b1020" },
+					"padding": { "top": "30px", "right": "18px", "bottom": "32px", "left": "18px" },
+					"margin": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" },
+					"radius": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
+				},
+				"codeblock": {
+					"background": { "type": "solid", "color": "#0d1424" },
+					"radius": { "top": "14px", "right": "14px", "bottom": "14px", "left": "14px" },
+					"width": "460px",
+					"shadow": [],
+					"border": { "width": "1px", "style": "solid", "color": "#1c2740" }
+				},
+				"top": {
+					"background": { "type": "solid", "color": "#111a2e" },
+					"padding": { "top": "9px", "right": "14px", "bottom": "9px", "left": "14px" },
+					"divider": { "width": "1px", "style": "solid", "color": "#1c2740" }
+				},
+				"lang": {
+					"color": "#5b6b8c",
+					"typo": { "fontSize": { "desktop": "0.72rem" } }
+				},
+				"copy": {
+					"background": { "type": "solid", "color": "transparent" },
+					"color": "#9fb0d0",
+					"radius": { "top": "7px", "right": "7px", "bottom": "7px", "left": "7px" },
+					"padding": { "top": "5px", "right": "10px", "bottom": "5px", "left": "10px" },
+					"typo": { "fontSize": { "desktop": "0.74rem" } },
+					"hoverBackground": { "type": "solid", "color": "#1a2540" },
+					"hoverColor": "#ffffff",
+					"border": { "width": "1px", "style": "solid", "color": "#263352" }
+				},
+				"pre": {
+					"padding": { "top": "16px", "right": "16px", "bottom": "16px", "left": "16px" },
+					"typo": { "fontSize": { "desktop": "0.82rem" } }
+				},
+				"code": {
+					"color": "#c9d5ee"
+				},
+				"banner": {
+					"background": { "type": "gradient", "gradient": "linear-gradient(90deg, #00d68f, #00b894)" },
+					"color": "#004411",
+					"typo": { "fontSize": { "desktop": "0.8rem" } },
+					"padding": { "top": "9px", "right": "9px", "bottom": "9px", "left": "9px" }
+				}
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:../index.js",
+	"editorStyle": "file:../index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

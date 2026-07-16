@@ -1,0 +1,263 @@
+// Common CSS
+html {
+	scroll-behavior: smooth;
+}
+
+// Dashicon
+.dashicons {
+	font-family: dashicons !important;
+}
+
+input:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+// Click to Clip board
+.wp-block-ctcb-click-to-copy {
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.form {
+
+		.copyText {
+			margin-top: 15px;
+
+			.text {
+				width: 100%;
+				border: none;
+				outline: none;
+
+				&:focus {
+					box-shadow: unset;
+
+				}
+			}
+
+			button {
+				padding: 10px;
+				border: none;
+				outline: none;
+				border-radius: 10px;
+				cursor: pointer;
+			}
+
+		}
+
+		&.default {
+
+			.copyText {
+				position: relative;
+				background: #fff;
+				display: flex;
+
+				.subBtn {
+					display: flex;
+					align-items: center;
+
+					svg {}
+
+					:active {
+						background: #809ce2;
+					}
+
+					&::before {
+						position: absolute;
+						top: -45px;
+						right: 0px;
+						padding: 8px 10px;
+						border-radius: 20px;
+						font-size: 15px;
+						line-height: 113%;
+						display: none;
+
+					}
+
+					&::after {
+						content: "";
+						position: absolute;
+						top: -20px;
+						right: 25px;
+						width: 10px;
+						height: 10px;
+						transform: rotate(45deg);
+						display: none;
+					}
+				}
+			}
+
+			.copyText.active .subBtn::before,
+			.copyText.active .subBtn::after {
+				display: block;
+			}
+		}
+
+		&.form1 {
+			.copyText {
+				position: relative;
+				display: flex;
+
+				&:hover {
+					opacity: 0.3;
+				}
+
+				.subBtn {
+					display: flex;
+					align-items: center;
+
+				}
+
+				.text {
+					text-align: center;
+				}
+
+				&.active {
+					width: 80%;
+					margin: 0 auto;
+					margin-top: 20px;
+				}
+			}
+		}
+
+		&.form2 {
+
+			.copyText {
+				display: flex;
+				justify-content: center;
+				column-gap: 20px;
+
+				.text {
+					border: 1px solid #000;
+					border-radius: 10px;
+				}
+
+				.subBtn {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+
+			.message {
+				color: green;
+				font-size: 20px;
+				font-weight: 400;
+				text-align: center;
+			}
+
+		}
+
+		&.form3 {
+			.inputForm {
+				.subBtn {
+					border: none;
+					outline: none;
+					border-radius: 10px;
+					cursor: pointer;
+					display: flex;
+					align-items: center;
+					margin: 0 auto;
+					margin-top: 20px;
+				}
+			}
+
+			.copyTextForm3 {
+				padding: 0px !important;
+				margin-top: 20px;
+
+				.text {}
+			}
+
+			.message {
+				position: relative;
+				width: 150px;
+				font-size: 16px;
+				font-weight: 400;
+				color: #fff;
+				background-color: green;
+				text-align: center;
+				padding: 2px;
+				margin-top: 15px;
+				margin: auto;
+				margin-top: 30px;
+
+				&::after {
+					content: "";
+					top: -2px;
+					left: 48px;
+					position: absolute;
+					-webkit-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					transform: rotate(134deg);
+					border-top: 20px solid transparent;
+
+					border-right: 20px solid transparent;
+
+				}
+			}
+
+		}
+
+		&.form4 {
+			position: relative;
+
+			.formMainArea {
+				position: relative;
+
+				.content {
+					&:hover+.hoverContent {
+						opacity: 1;
+					}
+
+					cursor: pointer;
+				}
+
+				.hoverContent {
+					position: absolute;
+					top: -26px;
+					left: 0;
+					opacity: 0;
+					transition: opacity 0.3s;
+					color: #fff;
+					padding: 2px 5px;
+					background: #000;
+				}
+			}
+		}
+	}
+	
+    
+    .proBtn {
+      display: flex;
+    //   align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+      border: none;
+      outline: none;
+	  position: relative;
+	  text-align: left;
+    }
+   
+  
+	.proSymbleIcon ,.proCopyIcon{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+.proCopyIcon {
+  position: absolute;
+  top: 0;   /* উপরে থেকে gap */
+  right: 0; /* ডান থেকে gap */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
+
+}

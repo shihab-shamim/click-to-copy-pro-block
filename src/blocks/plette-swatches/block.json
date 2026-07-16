@@ -1,0 +1,86 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ctcb/palette-swatches",
+	"version": "1.0.0",
+	"title": "Palette Swatches",
+	"category": "click-to-copy",
+	"description": "A grid of color chips — click any swatch to copy its HEX, with a flash-to-confirm animation.",
+	"keywords": [
+		"palette swatches",
+		"color palette",
+		"swatch",
+		"hex",
+		"click to copy",
+		"copy color",
+		"colors",
+		"chips",
+		"brand colors"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"swatches": {
+			"type": "array",
+			"default": [
+				{ "color": "#6C5CE7" },
+				{ "color": "#00CEC9" },
+				{ "color": "#FD79A8" },
+				{ "color": "#FDCB6E" },
+				{ "color": "#0984E3" },
+				{ "color": "#00B894" }
+			]
+		},
+		"styles": {
+			"type": "object",
+			"default": {
+				"stage": {
+					"background": { "type": "gradient", "gradient": "repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(38,44,64,0.4) 12px, rgba(38,44,64,0.4) 13px), linear-gradient(180deg, #171b28, #12151f)" },
+					"padding": { "top": "30px", "right": "22px", "bottom": "32px", "left": "22px" },
+					"margin": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" },
+					"radius": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
+				},
+				"palette": {
+					"columns": 3,
+					"gap": "12px",
+					"width": "100%"
+				},
+				"swatch": {
+					"radius": { "top": "14px", "right": "14px", "bottom": "14px", "left": "14px" },
+					"shadow": []
+				},
+				"hex": {
+					"color": "#ffffff",
+					"typo": { "fontSize": { "desktop": "0.75rem" } },
+					"background": { "type": "gradient", "gradient": "linear-gradient(transparent, rgba(0,0,0,0.5))" },
+					"padding": { "top": "7px", "right": "7px", "bottom": "7px", "left": "7px" }
+				},
+				"overlay": {
+					"background": { "type": "solid", "color": "transparent" }
+				},
+				"copied": {
+					"background": { "type": "solid", "color": "rgba(0,0,0,0.55)" },
+					"shadow": []
+				}
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:../index.js",
+	"editorStyle": "file:../index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

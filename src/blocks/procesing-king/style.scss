@@ -1,0 +1,88 @@
+.wp-block-ctcb-progress-ring {
+	box-sizing: border-box;
+
+
+	--mono: "JetBrains Mono", "SF Mono", "Cascadia Code", ui-monospace, Menlo, Consolas, monospace;
+	--font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--ease: cubic-bezier(.22, 1, .36, 1);
+
+	* {
+		box-sizing: border-box;
+	}
+
+	
+	.ctc_pr_ring-stage {
+		min-height: 220px;
+		display: grid;
+		place-items: center;
+		position: relative;
+		overflow: hidden;
+	
+		.ctc_pr_ring {
+			position: relative;
+			border: none;
+			background: none;
+			cursor: pointer;
+			padding: 0;
+			
+			&__svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+
+			&__track {
+				fill: none;
+			}
+
+			&__bar {
+				fill: none;
+				stroke-linecap: round;
+				stroke-dasharray: 327;
+				stroke-dashoffset: 327;
+			}
+
+			&__check {
+				fill: none;
+				stroke: #00d68f;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+				stroke-dasharray: 70;
+				stroke-dashoffset: 70;
+				opacity: 0;
+				transition: stroke-dashoffset .4s var(--ease) .3s, opacity .1s .3s;
+			}
+
+			&__label {
+				position: absolute;
+				inset: 0;
+				display: grid;
+				place-content: center;
+				text-align: center;
+				line-height: 1.4;
+				transition: opacity .3s;
+				&-inner {
+					display: inline-block;
+				}
+			}
+
+			&__code {
+				font-family: var(--mono);
+				
+			}
+			
+		}
+	}
+	
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ctcb-progress-ring {
+		*, *::before, *::after {
+			animation-duration: .01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: .01ms !important;
+		}
+	}
+}

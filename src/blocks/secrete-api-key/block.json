@@ -1,0 +1,123 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ctcb/secret-api-key",
+	"version": "1.0.0",
+	"title": "Secret API Key",
+	"category": "click-to-copy",
+	"description": "A frosted-glass vault that masks a secret API key — reveal it, then click to copy, with glassmorphism styling.",
+	"keywords": [
+		"secret api key",
+		"api key",
+		"glass",
+		"glassmorphism",
+		"click to copy",
+		"copy secret",
+		"reveal",
+		"token",
+		"credentials"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"badgeText": {
+			"type": "string",
+			"default": "SECRET"
+		},
+		"keyName": {
+			"type": "string",
+			"default": "Production key"
+		},
+		"keyValue": {
+			"type": "string",
+			"default": "demo_stripe_key"
+		},
+		"maskedText": {
+			"type": "string",
+			"default": "•••• •••• •••• •••• ••••"
+		},
+		"showBadge": {
+			"type": "boolean",
+			"default": true
+		},
+		"showName": {
+			"type": "boolean",
+			"default": true
+		},
+		"showRevealButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCopyButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"styles": {
+			"type": "object",
+			"default": {
+				"stage": {
+					"background": { "type": "gradient", "gradient": "radial-gradient(60% 80% at 20% 10%, rgba(108,92,231,.5), transparent), radial-gradient(50% 60% at 90% 100%, rgba(0,206,201,.45), transparent), #0a0e1a" },
+					"padding": { "top": "30px", "right": "22px", "bottom": "32px", "left": "22px" },
+					"margin": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" },
+					"radius": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
+				},
+				"glasskey": {
+					"background": { "type": "solid", "color": "rgba(255,255,255,0.07)" },
+					"padding": { "top": "20px", "right": "20px", "bottom": "20px", "left": "20px" },
+					"radius": { "top": "18px", "right": "18px", "bottom": "18px", "left": "18px" },
+					"width": "440px",
+					"shadow": [
+						{ "hOffset": "0px", "vOffset": "1px", "blur": "0px", "spreed": "0px", "color": "rgba(255,255,255,0.22)", "isInset": true },
+						{ "hOffset": "0px", "vOffset": "20px", "blur": "40px", "spreed": "-20px", "color": "rgba(0,0,0,0.6)", "isInset": false }
+					]
+				},
+				"badge": {
+					"background": { "type": "solid", "color": "rgba(255,90,90,0.3)" },
+					"color": "#ffffff",
+					"typo": { "fontSize": { "desktop": "0.62rem" } },
+					"padding": { "top": "3px", "right": "8px", "bottom": "3px", "left": "8px" },
+					"radius": { "top": "6px", "right": "6px", "bottom": "6px", "left": "6px" }
+				},
+				"name": {
+					"color": "rgba(255,255,255,0.78)",
+					"typo": { "fontSize": { "desktop": "0.82rem" } }
+				},
+				"value": {
+					"background": { "type": "solid", "color": "rgba(0,0,0,0.28)" },
+					"color": "#eaf0ff",
+					"typo": { "fontSize": { "desktop": "0.92rem" } },
+					"padding": { "top": "10px", "right": "12px", "bottom": "10px", "left": "12px" },
+					"radius": { "top": "10px", "right": "10px", "bottom": "10px", "left": "10px" }
+				},
+				"btn": {
+					"background": { "type": "solid", "color": "rgba(255,255,255,0.1)" },
+					"color": "#eaf0ff",
+					"radius": { "top": "10px", "right": "10px", "bottom": "10px", "left": "10px" },
+					"size": "40px",
+					"hoverBackground": { "type": "solid", "color": "rgba(255,255,255,0.2)" },
+					"hoverColor": "#eaf0ff",
+					"copiedBackground": { "type": "solid", "color": "rgba(0,214,143,0.3)" },
+					"copiedColor": "#7dffc4"
+				}
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:../index.js",
+	"editorStyle": "file:../index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

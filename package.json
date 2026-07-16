@@ -1,0 +1,42 @@
+
+{
+  "name": "click-to-copy",
+  "version": "0.1.0",
+  "description": "Boost your website's credibility with B Testimonials Block, effortlessly showcasing customer ratings and reviews.",
+  "author": "The WordPress Contributors",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "packages-update": "wp-scripts packages-update",
+    "lint": "eslint src",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "format": "wp-scripts format",
+    "start": "wp-scripts start --webpack-copy-php",
+    "build": "wp-scripts build --webpack-copy-php",
+    "i18n-pot": "wp i18n make-pot . languages/info-cards.pot --exclude=\"src\" && cp ./languages/info-cards.pot ./languages/info-cards-en_US.po",
+    "i18n-json": "wp i18n make-json languages/ --no-purge",
+    "i18n-mo": "wp i18n make-mo languages/",
+    "i18n": "npm run i18n-pot && npm run i18n-json && npm run i18n-mo",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "bundle": "npm run lint && npm run build && npm run i18n && npm run plugin-zip"
+  },
+  "dependencies": {
+    "@wordpress/components": "^29.0.0",
+    "immer": "^10.1.1",
+    "react-ace": "^13.0.0",
+    "react-hot-toast": "^2.5.2",
+    "react-justified-grid": "^1.0.0",
+    "react-responsive-masonry": "^2.3.0",
+    "react-router-dom": "^7.7.0",
+    "react-sortable-hoc": "^2.0.0",
+    "react-toastify": "^10.0.6",
+    "select-pure": "^0.6.2",
+    "swiper": "^11.1.9",
+    "vanilla-tilt": "^1.8.1"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^27.9.0",
+    "eslint-webpack-plugin": "^4.2.0"
+  }
+}

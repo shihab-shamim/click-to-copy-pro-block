@@ -1,0 +1,93 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ctcb/progress-ring",
+	"version": "1.0.0",
+	"title": "Progress Ring",
+	"category": "click-to-copy",
+	"description": "A circular SVG progress ring that sweeps and snaps to a checkmark on click, copying a value to the clipboard.",
+	"keywords": [
+		"progress ring",
+		"circular progress",
+		"ring",
+		"svg progress",
+		"click to copy",
+		"copy",
+		"radial",
+		"loader",
+		"checkmark"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"title": {
+			"type": "string",
+			"default": "Copy"
+		},
+		"code": {
+			"type": "string",
+			"default": "#A1B2C3"
+		},
+		"copyText": {
+			"type": "string",
+			"default": "ORDER-#A1B2C3"
+		},
+		"showTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCode": {
+			"type": "boolean",
+			"default": true
+		},
+		"styles": {
+			"type": "object",
+			"default": {
+				"stage": {
+					"background": { "type": "gradient", "gradient": "linear-gradient(160deg, #0e1424, #090c14)" },
+					"padding": { "top": "30px", "right": "22px", "bottom": "32px", "left": "22px" },
+					"margin": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" },
+					"radius": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" },
+					"shadow": []
+				},
+				"ring": {
+					"size": "130px",
+					"thickness": 8,
+					"track": "#1e2740",
+					"progress": "#6c5ce7",
+					"duration": "0.7s"
+				},
+				"title": {
+					"color": "#9aa3bd",
+					"typo": { "fontSize": { "desktop": "0.8rem" } },
+					"margin": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" },
+					"padding": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
+				},
+				"code": {
+					"color": "#eef1f8",
+					"typo": { "fontSize": { "desktop": "0.8rem" } },
+					"margin": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" },
+					"padding": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
+				}
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:../index.js",
+	"editorStyle": "file:../index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

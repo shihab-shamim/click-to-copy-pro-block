@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ctcb/click-to-copy-selector",
+	"version": "1.0.0",
+	"title": "Click To Copy Selector",
+	"category": "click-to-copy",
+	"description": "Choose and display your Click To Copy block.",
+	"keywords": ["selector", "click to copy"],
+	"textdomain": "clipboard",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"inserter": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}

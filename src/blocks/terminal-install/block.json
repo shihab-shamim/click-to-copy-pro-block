@@ -1,0 +1,141 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ctcb/terminal-install",
+	"version": "1.0.0",
+	"title": "Terminal Install",
+	"category": "click-to-copy",
+	"description": "Display terminal installation commands with a clean, copy-friendly interface for software, packages, and CLI tools.",
+	"keywords": [
+		"terminal install",
+  "install command",
+  "CLI",
+  "terminal",
+  "command line",
+  "copy command",
+  "bash",
+  "shell",
+  "installation"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"barTitle": {
+			"type": "string",
+			"default": "bash — install"
+		},
+		"promptText": {
+			"type": "string",
+			"default": "➜"
+		},
+		"command": {
+			"type": "string",
+			"default": "npm i @bplugins/copykit"
+		},
+		"copyLabel": {
+			"type": "string",
+			"default": "Copy"
+		},
+		"showBar": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDots": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPrompt": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCommand": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCopyButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCursor": {
+			"type": "boolean",
+			"default": true
+		},
+		"styles": {
+			"type": "object",
+			"default": {
+				"stage": {
+					"background": { "type": "gradient", "gradient": "radial-gradient(circle at 30% 20%, #12233a, #0a0f18)" },
+					"padding": { "top": "30px", "right": "22px", "bottom": "32px", "left": "22px" },
+					"margin": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" },
+					"radius": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
+
+				},
+				"terminal": {
+					"background": { "type": "solid", "color": "#0d1117" },
+					"radius": { "top": "14px", "right": "14px", "bottom": "14px", "left": "14px" },
+					"width": "420px",
+					"shadow": [
+						{ "hOffset": "0px", "vOffset": "30px", "blur": "60px", "spreed": "-30px", "color": "#000000", "isInset": false },
+						{ "hOffset": "0px", "vOffset": "1px", "blur": "0px", "spreed": "0px", "color": "rgba(255,255,255,0.04)", "isInset": true }
+					]
+				},
+				"bar": {
+					"background": { "type": "gradient", "gradient": "linear-gradient(#171e2b, #10151f)" },
+					"padding": { "top": "11px", "right": "14px", "bottom": "11px", "left": "14px" }
+				},
+				"body": {
+					"padding": { "top": "20px", "right": "16px", "bottom": "20px", "left": "16px" }
+				},
+				"dots": {
+					"size": "12px",
+					"colorR": "#ff5f56",
+					"colorY": "#ffbd2e",
+					"colorG": "#27c93f"
+				},
+				"title": {
+					"color": "#5b6577",
+					"typo": { "fontSize": { "desktop": "0.72rem" } }
+				},
+				"prompt": {
+					"color": "#27c93f",
+					"typo": { "fontSize": { "desktop": "0.9rem" } }
+				},
+				"command": {
+					"color": "#7fd1ff",
+					"typo": { "fontSize": { "desktop": "0.9rem" } }
+				},
+				"copy": {
+					"background": { "type": "solid", "color": "#1a2130" },
+					"color": "#9fb0c9",
+					"typo": { "fontSize": { "desktop": "0.78rem" } },
+					"iconSize": "16px",
+					"padding": { "top": "6px", "right": "10px", "bottom": "6px", "left": "10px" },
+					"radius": { "top": "8px", "right": "8px", "bottom": "8px", "left": "8px" },
+					"shadow": []
+				}
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:../index.js",
+	"editorStyle": "file:../index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

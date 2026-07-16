@@ -1,0 +1,22 @@
+<!-- ==========================
+     07 Code Block — verbatim markup reference
+     Mirrors the JSX in OneCard.js. Not imported by the build; kept as the
+     source-of-truth for the migrated markup (classes carry the `ctc_cb` prefix).
+     The code lines are rendered from the plain-text `copyText` attribute: it is
+     split on newlines and each line becomes a `.ctc_cb_cl` with a sequential
+     `.ctc_cb_ln` number + the line text (React-escaped, no raw HTML). The code
+     colors come from the selected `theme` attribute (see utils/themes.js), applied
+     by Components/Common/Style.js.
+========================== -->
+<div class="ctc_cb_codeblock-stage ctc_cb_stage--codeblock">
+  <div class="ctc_cb_codeblock" data-fx="codeblock">
+    <div class="ctc_cb_codeblock__top">
+      <span class="ctc_cb_codeblock__lang">javascript</span>
+      <button class="ctc_cb_codeblock__copy ctc_cb_js-copy" data-copy="const kit = new CopyKit({ theme: 'aurora' });&#10;kit.mount('#app');">
+        <span class="ctc_cb_codeblock__copy-txt">Copy code</span>
+      </button>
+    </div>
+    <pre class="ctc_cb_codeblock__pre"><code><span class="ctc_cb_cl"><span class="ctc_cb_ln">1</span>const kit = new CopyKit({ theme: 'aurora' });</span><span class="ctc_cb_cl"><span class="ctc_cb_ln">2</span>kit.mount('#app');</span></code></pre>
+    <div class="ctc_cb_codeblock__banner">Copied to clipboard</div>
+  </div>
+</div>

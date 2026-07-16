@@ -1,0 +1,277 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "ctcb/click-to-copy",
+	"title": "Click to Copy",
+	"description": "The Click To Copy Block plugin offers a seamless Gutenberg block for one-click content copying",
+	"category": "click-to-copy",
+	"keywords": [
+		"click to copy",
+		"copy to clipboard",
+		"block"
+	],
+	"textdomain": "clipboard",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": ""
+		},
+		"cId": {
+			"type": "string",
+			"default": ""
+		},
+		"hoverContent": {
+			"type": "object",
+			"default": {
+				"typo": {
+					"fontSize": {
+						"desktop": 15,
+						"tablet": 14,
+						"mobile": 14
+					},
+					"fontWeight": 400,
+					"lineHeight": "135%"
+				},
+				"colors": {
+					"color": "#fff",
+					"bg": "#000"
+				}
+			}
+		},
+		"input": {
+			"type": "object",
+			"default": {
+				"label": "Enter Your Label",
+				"offerContent": "Input Your Data",
+				"icon":"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path d='M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z'/></svg>"
+			}
+		},
+		"elements": {
+			"type": "object",
+			"default": {
+				"label": true,
+				"icon": true,
+				"text": true,
+				"symbleIcon":true,
+				"inputClickToCopy":true
+			}
+		},
+		"forms": {
+			"type": "string",
+			"default": "default"
+		},
+		"labelTypo": {
+			"type": "object",
+			"default": {
+				"fontSize": {
+					"desktop": 18,
+					"tablet": 15,
+					"mobile": 15
+				},
+				"fontWeight": 400,
+				"lineHeight": "135%"
+			}
+		},
+		"labelColor": {
+			"type": "string",
+			"default": "#000"
+		},
+		"inputTypo": {
+			"type": "object",
+			"default": {
+				"fontSize": {
+					"desktop": 18,
+					"tablet": 15,
+					"mobile": 15
+				},
+				"fontWeight": 400,
+				"fontFamily": "Arial, sans-serif",
+				"lineHeight": "135%"
+			}
+		},
+		"inputColors": {
+			"type": "object",
+			"default": {
+				"color": "#000000a1",
+				"bg": "#fff"
+			}
+		},
+		"inputPadding": {
+			"type": "object",
+			"default": {
+				"top": "5px",
+				"right": "5px",
+				"bottom": "5px",
+				"left": "5px"
+			}
+		},
+		"inputBorder": {
+			"type": "object",
+			"default": {
+				"radius": "5px",
+				"color": "#000",
+				"width": "1px"
+			}
+		},
+		"btnTypo": {
+			"type": "object",
+			"default": {
+				"fontSize": {
+					"desktop": 18,
+					"tablet": 15,
+					"mobile": 15
+				},
+				"fontWeight": 400,
+				"fontFamily": "Arial, sans-serif",
+				"lineHeight": "135%"
+			}
+		},
+		"btnColors": {
+			"type": "object",
+			"default": {
+				"color": "#fff",
+				"bg": "#5784f5"
+			}
+		},
+		"btnBorder": {
+			"type": "object",
+			"default": {
+				"radius": "10px",
+				"color": "#000",
+				"width": "0px"
+			}
+		},
+		"btnPadding": {
+			"type": "object",
+			"default": {
+				"top": "10px",
+				"right": "20px",
+				"bottom": "10px",
+				"left": "20px"
+			}
+		},
+		"btnIcon": {
+			"type": "object",
+			"default": {
+				"color": "#fff",
+				"size": 18
+			}
+		},
+		"styles":{
+			"type":"object",
+			"default":{
+				"bg":{},
+				"padding":{
+					"desktop":{
+						"top":"0px",
+						"left":"0px",
+						"right":"0px",
+						"bottom":"0px"
+					},
+						"tablet":{
+						"top":"0px",
+						"left":"0px",
+						"right":"0px",
+						"bottom":"0px"
+					},	"mobile":{
+						"top":"0px",
+						"left":"0px",
+						"right":"0px",
+						"bottom":"0px"
+					}
+				},
+				"margin":{
+					"desktop":{
+						"top":"0px",
+						"left":"0px",
+						"right":"0px",
+						"bottom":"0px"
+					},
+						"tablet":{
+						"top":"0px",
+						"left":"0px",
+						"right":"0px",
+						"bottom":"0px"
+					},	"mobile":{
+						"top":"0px",
+						"left":"0px",
+						"right":"0px",
+						"bottom":"0px"
+					}
+				},
+				"icon":{
+					"color":"#fff",
+					"size":16
+				},
+				"input":{
+					"border":{},
+					"hoverBorder":{},
+		            "hoverBg":{},
+					"alignment":"left"
+					,
+					"radius":{
+						"top":"8px",
+						"left":"8px",
+						"right":"8px",
+						"bottom":"8px"
+					},
+					"hoverShadow":[],
+					"shadow":[],
+					"text":{
+						"margin":{"top":"0px",
+						"left":"0px",
+						"right":"20px",
+						"bottom":"0px"}
+					},"margin":{
+						"top":"0px",
+						"left":"0px",
+						"right":"0px",
+						"bottom":"0px"
+
+					}
+
+				},
+				"label":{
+					"margin":{
+						"top":"10px",
+						"left":"10px",
+						"right":"10px",
+						"bottom":"10px"
+
+					}
+				}
+
+
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {
+			"preview": true,
+			"columns": {
+				"desktop": 1,
+				"tablet": 1,
+				"mobile": 1
+			}
+		}
+	},
+	"editorScript": [
+		"file:./index.js","wp-api"
+	],
+	"editorStyle": "file:./index.css",
+	"style": [
+		"file:./view.css"
+	],
+	"render": "file:./render.php",
+	"viewScript": [
+		"file:./view.js",
+		"jquery"
+	]
+}

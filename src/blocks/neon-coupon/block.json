@@ -1,0 +1,134 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ctcb/neon-coupon",
+	"version": "1.0.0",
+	"title": "Neon Coupon",
+	"category": "click-to-copy",
+	"description": "A perforated neon ticket with a click-to-copy promo code, gradient amount, and glow-burst copy feedback.",
+	"keywords": [
+		"neon coupon",
+		"coupon",
+		"promo code",
+		"discount",
+		"click to copy",
+		"copy code",
+		"ticket",
+		"voucher",
+		"offer"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"label": {
+			"type": "string",
+			"default": "Limited offer"
+		},
+		"amount": {
+			"type": "string",
+			"default": "40% OFF"
+		},
+		"terms": {
+			"type": "string",
+			"default": "Valid until 2026-12-31"
+		},
+		"hint": {
+			"type": "string",
+			"default": "Tap to copy"
+		},
+		"code": {
+			"type": "string",
+			"default": "NEON40"
+		},
+		"showLabel": {
+			"type": "boolean",
+			"default": true
+		},
+		"showAmount": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTerms": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPerf": {
+			"type": "boolean",
+			"default": true
+		},
+		"showHint": {
+			"type": "boolean",
+			"default": true
+		},
+		"styles": {
+			"type": "object",
+			"default": {
+				"stage": {
+					"background": { "type": "gradient", "gradient": "radial-gradient(circle at 50% 120%, #2a0f3a, #0a0812)" },
+					"padding": { "top": "30px", "right": "22px", "bottom": "32px", "left": "22px" },
+					"margin": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" },
+					"radius": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
+				},
+				"coupon": {
+					"background": { "type": "solid", "color": "#14101f" },
+					"radius": { "top": "16px", "right": "16px", "bottom": "16px", "left": "16px" },
+					"width": "440px",
+					"shadow": [
+						{ "hOffset": "0px", "vOffset": "0px", "blur": "0px", "spreed": "1px", "color": "rgba(255,45,149,0.1)", "isInset": false },
+						{ "hOffset": "0px", "vOffset": "24px", "blur": "50px", "spreed": "-24px", "color": "#ff2d95", "isInset": false }
+					]
+				},
+				"left": {
+					"padding": { "top": "22px", "right": "22px", "bottom": "22px", "left": "22px" }
+				},
+				"label": {
+					"color": "#ff5ea8",
+					"typo": { "fontSize": { "desktop": "0.7rem" } }
+				},
+				"amount": {
+					"background": { "type": "gradient", "gradient": "linear-gradient(90deg, #ff2d95, #ff9d4d)" },
+					"typo": { "fontSize": { "desktop": "2rem" } }
+				},
+				"terms": {
+					"color": "#8a86a5",
+					"typo": { "fontSize": { "desktop": "0.74rem" } }
+				},
+				"perf": {
+					"color": "#33245a"
+				},
+				"right": {
+					"background": { "type": "gradient", "gradient": "linear-gradient(135deg, #ff2d95, #7b2dff)" },
+					"color": "#ffffff",
+					"hoverBackground": { "type": "gradient", "gradient": "linear-gradient(135deg, #ff2d95, #7b2dff)" },
+					"hoverColor": "#ffffff",
+					"width": "150px",
+					"radius": { "top": "0px", "right": "16px", "bottom": "16px", "left": "0px" }
+				},
+				"hint": {
+					"typo": { "fontSize": { "desktop": "0.62rem" } }
+				},
+				"code": {
+					"typo": { "fontSize": { "desktop": "1.4rem" } }
+				}
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:../index.js",
+	"editorStyle": "file:../index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

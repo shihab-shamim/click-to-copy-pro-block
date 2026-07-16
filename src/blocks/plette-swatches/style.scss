@@ -1,0 +1,125 @@
+.wp-block-ctcb-palette-swatches {
+	box-sizing: border-box;
+
+	/* Font + easing tokens used by the markup below. Every *customizable*
+	   property (backgrounds, spacing, radius, shadow, typography, grid columns/
+	   gap/width, colors) is emitted at runtime by Components/Common/Style.js from
+	   the seeded `styles` attribute, scoped to the block instance's #id. This
+	   stylesheet keeps ONLY the static structure, layout, the per-swatch color
+	   plumbing (`var(--c)`), animations and transitions — the two never define the
+	   same property twice. */
+	--mono: "JetBrains Mono", "SF Mono", "Cascadia Code", ui-monospace, Menlo, Consolas, monospace;
+	--font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--ease: cubic-bezier(.22, 1, .36, 1);
+	--ease-back: cubic-bezier(.34, 1.56, .64, 1);
+
+	* {
+		box-sizing: border-box;
+	}
+
+	/* ==========================================
+	   Color Palette #04 - Start
+	   Migrated from block/ design #04 ("04 Color Palette"). Classes use the
+	   `ctc_ps` prefix; SCSS is deep-nested to mirror the DOM/BEM structure.
+	   Each swatch's color arrives as an inline `--c` custom property (from the
+	   `swatches` repeater); the chrome below consumes it. Customizable props are
+	   generated dynamically — see the note above.
+	========================================== */
+	.ctc_ps_palette-stage {
+		min-height: 220px;
+		display: grid;
+		place-items: center;
+		position: relative;
+		overflow: hidden;
+		/* background + padding + margin + radius + alignment → dynamic (styles.stage) */
+
+		/* ---- Palette grid ---- */
+		.ctc_ps_palette {
+			display: grid;
+			width: 100%;
+			/* grid-template-columns + gap + max-width → dynamic (styles.palette) */
+
+			/* ---- Swatch chip ---- */
+			.ctc_ps_swatch {
+				position: relative;
+				border: none;
+				cursor: pointer;
+				aspect-ratio: 1.5 / 1;
+				overflow: hidden;
+				background: var(--c);
+				box-shadow: 0 10px 24px -12px var(--c);
+				transition: transform .3s var(--ease-back);
+				/* border-radius → dynamic (styles.swatch.radius);
+				   box-shadow override → dynamic (styles.swatch.shadow) */
+
+				&:hover {
+					transform: translateY(-4px) scale(1.03);
+				}
+
+				/* Copied flash overlay. */
+				&.ctc_ps_is-copied::after {
+					content: "Copied ✓";
+					position: absolute;
+					inset: 0;
+					display: grid;
+					place-items: center;
+					background: rgba(0, 0, 0, .55);
+					color: #fff;
+					font-weight: 700;
+					font-size: .85rem;
+					animation: ctc_ps-swatch-in .4s var(--ease);
+				}
+
+				&__hex {
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					font-family: var(--mono);
+					font-weight: 700;
+					text-align: center;
+					text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+					/* color + font-size + background + padding → dynamic (styles.hex) */
+				}
+			}
+		}
+	}
+	/* ==========================================
+	   Color Palette #04 - End
+	========================================== */
+}
+
+/* Normal-state overlay layer over each swatch. Transparent by default (no
+   visual change); Common/Style.js sets its background from styles.overlay. Sits
+   above the chip color but below the hex label + the copied "✓" overlay, and
+   never intercepts the copy click. */
+.wp-block-ctcb-palette-swatches .ctc_ps_swatch::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: transparent;
+	border-radius: inherit;
+	pointer-events: none;
+}
+
+/* Copied-overlay entry (scoped name to avoid cross-block collisions). */
+@keyframes ctc_ps-swatch-in {
+	from { opacity: 0; transform: scale(1.1); }
+	to { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================
+   Reduced Motion - Start
+========================================== */
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ctcb-palette-swatches {
+		*, *::before, *::after {
+			animation-duration: .01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: .01ms !important;
+		}
+	}
+}
+/* ==========================================
+   Reduced Motion - End
+========================================== */

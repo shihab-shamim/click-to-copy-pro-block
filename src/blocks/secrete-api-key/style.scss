@@ -1,0 +1,141 @@
+.wp-block-ctcb-secret-api-key {
+	box-sizing: border-box;
+
+	/* Font + easing tokens used by the markup below. Every *customizable*
+	   property (colors, backgrounds, spacing, radius, shadow, sizes, typography,
+	   hover, copied-state) is emitted at runtime by Components/Common/Style.js
+	   from the seeded `styles` attribute, scoped to the block instance's #id.
+	   This stylesheet keeps ONLY the static structure, layout, glass effect,
+	   borders and transitions — the two never define the same property twice. */
+	--mono: "JetBrains Mono", "SF Mono", "Cascadia Code", ui-monospace, Menlo, Consolas, monospace;
+	--font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--ease: cubic-bezier(.22, 1, .36, 1);
+	--ease-back: cubic-bezier(.34, 1.56, .64, 1);
+
+	* {
+		box-sizing: border-box;
+	}
+
+	/* ==========================================
+	   Glass API Key #03 - Start
+	   Migrated from block/ design #03 ("03 Glass API Key"). Classes use the
+	   `ctc_sak` prefix; SCSS is deep-nested to mirror the DOM/BEM structure.
+	   Customizable props are generated dynamically — see the note above; each
+	   block's `// → dynamic (…)` comment lists what Style.js supplies.
+	========================================== */
+	.ctc_sak_glasskey-stage {
+		min-height: 220px;
+		display: grid;
+		place-items: center;
+		position: relative;
+		overflow: hidden;
+		/* background + padding + margin + radius + alignment → dynamic (styles.stage) */
+
+		/* ---- Glass card ---- */
+		.ctc_sak_glasskey {
+			width: 100%;
+			border: 1px solid rgba(255, 255, 255, .16);
+			backdrop-filter: blur(16px) saturate(1.4);
+			-webkit-backdrop-filter: blur(16px) saturate(1.4);
+			/* background + padding + max-width + border-radius + box-shadow
+			   → dynamic (styles.glasskey) */
+
+			/* ---- Header ---- */
+			&__head {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				margin-bottom: 14px;
+			}
+
+			&__badge {
+				font-weight: 800;
+				letter-spacing: .12em;
+				border: 1px solid rgba(255, 120, 120, .5);
+				/* background + color + font-size + padding + border-radius
+				   → dynamic (styles.badge) */
+			}
+
+			&__name {
+				/* color + font-size → dynamic (styles.name) */
+			}
+
+			/* ---- Key row ---- */
+			&__row {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+			}
+
+			&__value {
+				flex: 1;
+				font-family: var(--mono);
+				letter-spacing: .04em;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				/* background + color + font-size + padding + border-radius
+				   → dynamic (styles.value) */
+			}
+
+			&__actions {
+				display: flex;
+				gap: 8px;
+			}
+
+			/* ---- Action buttons ---- */
+			&__btn {
+				cursor: pointer;
+				display: grid;
+				place-items: center;
+				border: 1px solid rgba(255, 255, 255, .2);
+				transition: background .25s, transform .25s var(--ease-back);
+				/* background + color + border-radius + size + hover bg/color
+				   → dynamic (styles.btn) */
+
+				&:hover {
+					transform: translateY(-2px);
+					/* hover background + color → dynamic (styles.btn.hover*) */
+				}
+
+				/* Copied flash: border tint is static; bg + icon color dynamic. */
+				&--copy.ctc_sak_is-copied {
+					border-color: rgba(0, 214, 143, .6);
+					/* background + color → dynamic (styles.btn.copied*) */
+				}
+
+				/* Copy-button icon swap (copy ↔ green check): smooth entry on
+				   each swap. OneCard gives the <svg> a changing `key`, so React
+				   remounts it and this fade/scale-in replays. */
+				&--copy .ctc_sak_glasskey__icon {
+					animation: ctc_sak-icon-in .25s var(--ease);
+				}
+			}
+		}
+	}
+	/* ==========================================
+	   Glass API Key #03 - End
+	========================================== */
+}
+
+/* Copy-button icon swap entry (scoped name to avoid cross-block collisions). */
+@keyframes ctc_sak-icon-in {
+	from { opacity: 0; transform: scale(.6); }
+	to { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================
+   Reduced Motion - Start
+========================================== */
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ctcb-secret-api-key {
+		*, *::before, *::after {
+			animation-duration: .01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: .01ms !important;
+		}
+	}
+}
+/* ==========================================
+   Reduced Motion - End
+========================================== */

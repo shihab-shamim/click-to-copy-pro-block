@@ -1,0 +1,93 @@
+.wp-block-ctcb-chatgpt-prompt {
+	box-sizing: border-box;
+
+	
+	--mono: "JetBrains Mono", "SF Mono", "Cascadia Code", ui-monospace, Menlo, Consolas, monospace;
+	--font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--ease: cubic-bezier(.22, 1, .36, 1);
+	--ease-back: cubic-bezier(.34, 1.56, .64, 1);
+
+	* {
+		box-sizing: border-box;
+	}
+
+
+	.ctc_gpt_prompt-stage {
+		min-height: 220px;
+		display: grid;
+		place-items: center;
+		position: relative;
+		overflow: hidden;
+		
+		.ctc_gpt_prompt {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			
+			&__head {
+				display: flex;
+				align-items: center;
+				gap: 11px;
+			}
+
+			&__avatar {
+				display: grid;
+				place-items: center;
+				flex-shrink: 0;
+				font-weight: 800;
+				overflow: hidden;
+
+				&-img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					display: block;
+				}
+			}
+
+			&__model {
+				font-weight: 700;
+			}
+
+			&__text {
+				margin: 0;
+				font-family: var(--mono);
+				line-height: 1.55;
+				white-space: pre-wrap;
+				
+			}
+
+			&__btn {
+				align-self: flex-start;
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				cursor: pointer;
+				font-family: var(--font);
+				font-weight: 600;
+				border: 1px solid transparent;
+				box-shadow: 0 12px 26px -14px #22d3ee;
+				transition: transform .25s var(--ease-back), box-shadow .25s var(--ease);
+				
+				&:hover {
+					transform: translateY(-2px);
+					box-shadow: 0 18px 34px -14px #22d3ee;
+				}
+
+				.ctc_gpt_prompt__ico {
+					width: 15px;
+					height: 15px;
+				}
+			}
+		}
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ctcb-chatgpt-prompt {
+		*, *::before, *::after {
+			animation-duration: .01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: .01ms !important;
+		}
+	}
+}

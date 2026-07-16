@@ -1,0 +1,78 @@
+/* AdvColorControl — popover + panel styling. Reuses the shared bPlColor* swatch
+   classes (defined by ColorControl.scss) for the toggle/theme swatches. */
+
+.bPlAdvColorPopover {
+	z-index: 10000000;
+
+	.components-popover__content {
+		min-width: 260px;
+		max-width: 280px;
+	}
+}
+
+.bPlAdvColorPanel {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 12px;
+
+	.bPlAdvColorFormat {
+		margin-bottom: 0;
+	}
+
+	.components-color-picker {
+		width: 100%;
+	}
+
+	.bPlAdvColorField {
+		.bPlAdvColorError {
+			margin: 4px 0 0;
+			color: #cc1818;
+			font-size: 11px;
+			line-height: 1.4;
+		}
+	}
+
+	.bPlAdvColorActions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+
+	.bPlAdvColorRow {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+
+		.bPlAdvColorRowLabel {
+			min-width: 54px;
+			font-size: 11px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: .04em;
+			color: #757575;
+		}
+
+		.bPlAdvColorSwatches {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 4px;
+		}
+
+		/* Compact square swatches for default + recent rows. */
+		.bPlColorButton {
+			width: 22px;
+			height: 22px;
+			border-radius: 4px;
+			border: 1px solid rgba(0, 0, 0, .12);
+			cursor: pointer;
+			padding: 0;
+		}
+	}
+
+	.bPlThemeColors {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+	}
+}

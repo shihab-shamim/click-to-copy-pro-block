@@ -1,0 +1,21 @@
+<!-- ==========================
+     13 Progress Ring — verbatim markup reference
+     Mirrors the JSX in OneCard.js. Not imported by the build; kept as the
+     source-of-truth for the migrated markup (classes carry the `ctc_pr` prefix).
+     On click the ring sweeps (stroke-dashoffset 327→0), snaps green, draws the
+     checkmark, and the label fades — driven by the `.ctc_pr_is-copied` class.
+     An optional per-instance <linearGradient> can color the progress bar.
+========================== -->
+<div class="ctc_pr_ring-stage ctc_pr_stage--ring">
+  <button class="ctc_pr_ring ctc_pr_js-copy" data-fx="ring" data-copy="ORDER-#A1B2C3" aria-label="Copy value">
+    <svg class="ctc_pr_ring__svg" viewBox="0 0 120 120" aria-hidden="true">
+      <circle class="ctc_pr_ring__track" cx="60" cy="60" r="52" />
+      <circle class="ctc_pr_ring__bar" cx="60" cy="60" r="52" />
+      <path class="ctc_pr_ring__check" d="M40 62l13 13 27-29" />
+    </svg>
+    <span class="ctc_pr_ring__label">
+      <span class="ctc_pr_ring__title">Copy</span><br>
+      <b class="ctc_pr_ring__code">#A1B2C3</b>
+    </span>
+  </button>
+</div>

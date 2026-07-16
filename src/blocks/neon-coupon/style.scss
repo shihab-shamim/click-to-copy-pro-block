@@ -1,0 +1,185 @@
+
+
+.wp-block-ctcb-neon-coupon {
+	box-sizing: border-box;
+
+	/* Font + easing tokens used by the markup below. Every *customizable*
+	   property (colors, backgrounds, spacing, radius, shadow, sizes, typography,
+	   hover) is emitted at runtime by Components/Common/Style.js from the seeded
+	   `styles` attribute, scoped to the block instance's #id. This stylesheet
+	   therefore keeps ONLY the static structure, layout, animation and
+	   button-reset rules — the two never define the same property twice. */
+	--mono: "JetBrains Mono", "SF Mono", "Cascadia Code", ui-monospace, Menlo, Consolas, monospace;
+	--font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--ease: cubic-bezier(.22, 1, .36, 1);
+	--ease-back: cubic-bezier(.34, 1.56, .64, 1);
+
+	* {
+		box-sizing: border-box;
+	}
+
+	/* ==========================================
+	   Neon Coupon #02 - Start
+	   Migrated from block/ design #02 ("02 Neon Coupon"). Classes use the
+	   `ctc_nc` prefix; SCSS is deep-nested to mirror the DOM/BEM structure.
+	   Customizable props are generated dynamically — see the note above; each
+	   block's `// → dynamic (…)` comment lists what Style.js supplies.
+	========================================== */
+	.ctc_nc_coupon-stage {
+		min-height: 220px;
+		display: grid;
+		place-items: center;
+		position: relative;
+		overflow: hidden;
+		/* background + padding + margin + radius + alignment → dynamic (styles.stage) */
+
+		/* ---- Coupon ticket ---- */
+		.ctc_nc_coupon {
+			display: flex;
+			align-items: stretch;
+			width: 100%;
+			position: relative;
+			border: 1px solid #33245a;
+			/* background + max-width + border-radius + box-shadow → dynamic (styles.coupon) */
+
+			/* ---- Left / offer text ---- */
+			&__left {
+				flex: 1;
+				/* padding → dynamic (styles.left) */
+			}
+
+			&__label {
+				margin: 0;
+				letter-spacing: .22em;
+				text-transform: uppercase;
+				/* color + font-size → dynamic (styles.label) */
+			}
+
+			&__amount {
+				margin: 6px 0;
+				font-weight: 800;
+				letter-spacing: -.02em;
+				/* gradient-clipped-to-text (background + clip + color) + font-size
+				   → dynamic (styles.amount) */
+			}
+
+			&__terms {
+				margin: 0;
+				/* color + font-size → dynamic (styles.terms) */
+			}
+
+			/* ---- Perforation divider ---- */
+			&__perf {
+				width: 2px;
+				align-self: stretch;
+				margin: 12px 0;
+				position: relative;
+				/* dashed repeating gradient → dynamic (styles.perf.color) */
+
+				/* The top/bottom "punch-outs". Their background is emitted by
+				   Common/Style.js from the live Coupon Window Background, so they
+				   always read as holes cut out of the ticket. */
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					left: 50%;
+					width: 22px;
+					height: 22px;
+					border-radius: 50%;
+					transform: translateX(-50%);
+				}
+
+				&::before {
+					top: -22px;
+				}
+
+				&::after {
+					bottom: -22px;
+				}
+			}
+
+			/* ---- Right / copy button ---- */
+			&__right {
+				border: none;
+				cursor: pointer;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 6px;
+				font-family: var(--mono);
+				position: relative;
+				overflow: hidden;
+				transition: filter .3s;
+				/* width + background + color + border-radius + hover bg/color
+				   → dynamic (styles.right) */
+
+				&:hover {
+					filter: brightness(1.12) saturate(1.2);
+				}
+
+				&.ctc_nc_is-copied {
+					animation: ctc_nc-pop .6s var(--ease-back);
+
+					&::after {
+						content: "✓ Copied";
+						position: absolute;
+						inset: 0;
+						display: grid;
+						place-items: center;
+						background: linear-gradient(135deg, #00d68f, #00b894);
+						font-family: var(--font);
+						font-weight: 700;
+						animation: ctc_nc-flash .6s var(--ease);
+					}
+				}
+			}
+
+			&__hint {
+				letter-spacing: .14em;
+				text-transform: uppercase;
+				opacity: .85;
+				font-family: var(--font);
+				/* font-size → dynamic (styles.hint) */
+			}
+
+			&__code {
+				font-weight: 700;
+				letter-spacing: .05em;
+				/* font-size → dynamic (styles.code) */
+			}
+		}
+	}
+	/* ==========================================
+	   Neon Coupon #02 - End
+	========================================== */
+}
+
+/* Glow-burst + confirm flash for the copy button (scoped names to avoid
+   collisions with other blocks' keyframes). */
+@keyframes ctc_nc-pop {
+	0% { box-shadow: 0 0 0 0 rgba(255, 45, 149, .6); }
+	100% { box-shadow: 0 0 0 26px rgba(255, 45, 149, 0); }
+}
+
+@keyframes ctc_nc-flash {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+/* ==========================================
+   Reduced Motion - Start
+========================================== */
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-ctcb-neon-coupon {
+		*, *::before, *::after {
+			animation-duration: .01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: .01ms !important;
+		}
+	}
+}
+/* ==========================================
+   Reduced Motion - End
+========================================== */

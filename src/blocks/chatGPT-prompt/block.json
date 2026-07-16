@@ -1,0 +1,124 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ctcb/chatgpt-prompt",
+	"version": "1.0.0",
+	"title": "ChatGPT Prompt",
+	"category": "click-to-copy",
+	"description": "A copy-ready ChatGPT prompt card — a model badge, the prompt text, and a one-click Copy prompt button.",
+	"keywords": [
+		"chatgpt prompt",
+		"prompt",
+		"ai prompt",
+		"gpt",
+		"click to copy",
+		"copy prompt",
+		"chatgpt",
+		"prompt card",
+		"llm"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"icon": {
+			"type": "string",
+			"default": "GPT"
+		},
+		"iconType": {
+			"type": "string",
+			"default": "default"
+		},
+		"iconImage": {
+			"type": "object",
+			"default": {}
+		},
+		"model": {
+			"type": "string",
+			"default": "ChatGPT"
+		},
+		"promptText": {
+			"type": "string",
+			"default": "Act as a senior software engineer. Review the following code for bugs, readability and performance, then suggest concrete improvements:"
+		},
+		"copyLabel": {
+			"type": "string",
+			"default": "Copy prompt"
+		},
+		"showHead": {
+			"type": "boolean",
+			"default": true
+		},
+		"showButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"styles": {
+			"type": "object",
+			"default": {
+				"stage": {
+					"background": { "type": "solid", "color": "transparent" },
+					"padding": { "top": "30px", "right": "22px", "bottom": "32px", "left": "22px" },
+					"margin": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
+				},
+				"prompt": {
+					"background": { "type": "solid", "color": "#171b28" },
+					"border": { "width": "1px", "style": "solid", "color": "#262c40" },
+					"radius": { "top": "18px", "right": "18px", "bottom": "18px", "left": "18px" },
+					"shadow": [
+						{ "hOffset": "0px", "vOffset": "24px", "blur": "50px", "spreed": "-30px", "color": "rgba(0,0,0,0.6)", "isInset": false }
+					],
+					"padding": { "top": "20px", "right": "20px", "bottom": "20px", "left": "20px" },
+					"width": "440px",
+					"gap": "14px"
+				},
+				"avatar": {
+					"background": { "type": "gradient", "gradient": "linear-gradient(135deg, #22d3ee, #a855f7)" },
+					"color": "#ffffff",
+					"size": "36px",
+					"radius": { "top": "11px", "right": "11px", "bottom": "11px", "left": "11px" },
+					"typo": { "fontSize": { "desktop": "0.82rem" } }
+				},
+				"model": {
+					"color": "#eef1f8",
+					"typo": { "fontSize": { "desktop": "0.95rem" } }
+				},
+				"text": {
+					"background": { "type": "solid", "color": "#12151f" },
+					"color": "#eef1f8",
+					"typo": { "fontSize": { "desktop": "0.9rem" } },
+					"padding": { "top": "13px", "right": "15px", "bottom": "13px", "left": "15px" },
+					"radius": { "top": "12px", "right": "12px", "bottom": "12px", "left": "12px" },
+					"border": { "width": "1px", "style": "solid", "color": "#262c40" }
+				},
+				"btn": {
+					"background": { "type": "gradient", "gradient": "linear-gradient(135deg, #22d3ee, #a855f7)" },
+					"color": "#ffffff",
+					"typo": { "fontSize": { "desktop": "0.85rem" } },
+					"padding": { "top": "10px", "right": "16px", "bottom": "10px", "left": "16px" },
+					"radius": { "top": "11px", "right": "11px", "bottom": "11px", "left": "11px" },
+					"iconSize": "15px",
+					"hoverBackground": { "type": "gradient", "gradient": "linear-gradient(135deg, #22d3ee, #a855f7)" },
+					"copiedBackground": { "type": "gradient", "gradient": "linear-gradient(135deg, #00b894, #00cec9)" }
+				}
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:../index.js",
+	"editorStyle": "file:../index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}
