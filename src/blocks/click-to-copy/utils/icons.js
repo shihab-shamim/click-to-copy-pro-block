@@ -1,6 +1,12 @@
 
 
 
+// Inserter/dashboard block icon — outline style, matches the other blocks.
+export const blockIcon = <svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={2} strokeLinecap='round' strokeLinejoin='round' style={{ fill: 'none' }}>
+	<rect x='9' y='9' width='13' height='13' rx='2' ry='2' />
+	<path d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1' />
+</svg>;
+
 const icons = {
 	iconCopy: (color, size) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 32 32" enableBackground="new 0 0 32 32" xmlSpace="preserve"><rect x="13" y="9" fill="currentColor" stroke={color} strokeWidth="2" strokeMiterlimit="10" width="14" height="18" /><polyline fill="none" stroke={color} strokeWidth="2" strokeMiterlimit="10" points="11,23 5,23 5,5 19,5 19,7 " />
 	</svg>,

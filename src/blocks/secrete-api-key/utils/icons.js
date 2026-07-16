@@ -1,9 +1,8 @@
-const iconColor = '#6c5ce7';
+const iconColor = 'currentColor';
 
-export const blockIcon = <svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' fill='none' stroke={iconColor} strokeWidth={1.8}>
-	<rect x='3' y='11' width='18' height='10' rx='2' />
-	<path d='M7 11V8a5 5 0 0 1 10 0v3' />
-	<circle cx='12' cy='16' r='1.4' fill={iconColor} stroke='none' />
+export const blockIcon = <svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' fill='none' stroke={iconColor} strokeWidth={2} strokeLinecap='round' strokeLinejoin='round' style={{ fill: 'none' }}>
+	<circle cx='7.5' cy='15.5' r='4.5' />
+	<path d='m10.5 12.5 8-8M17 5l3 3M15 7l2 2' />
 </svg>;
 
 export const verticalLineIcon = <svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 14.707 14.707'>
