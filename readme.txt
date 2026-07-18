@@ -159,6 +159,13 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 1. Preview-1
 2. Preview-2
 3. Setting
+4. Terminal Install 
+5. Secret API Key
+6. Neon Coupon 
+7. Palette Swatches 
+8. Code Block
+9. Progress Ring
+10. ChatGPT Prompt
 
  
  
