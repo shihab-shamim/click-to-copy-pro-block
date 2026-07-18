@@ -7,7 +7,7 @@ if ( !defined( 'ABSPATH' ) ) { exit; }
  * License Activation Handler
  * Handles Freemius license activation via AJAX
  */
-if( !class_exists( 'LicenseActivation' ) ){
+if( !class_exists( LicenseActivation::class ) ){
 	class LicenseActivation {
 		private $fs_callable;
 		private $fs;

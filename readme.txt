@@ -48,6 +48,7 @@ Enhance your WordPress site today with the Click To Copy Block plugin and empowe
 =  Pro Features =
 -  Universal Shortcodes: Compatible with all page builders
 -  15+ Ready-to-Use themes
+-  Add 7+ new blocks.
 -  Fully customizable
 -  Set custom color,Background Color
 -  Fully customizable margin, padding, border radius, and borders

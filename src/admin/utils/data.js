@@ -1,4 +1,6 @@
-import { gridIcon } from '../../utils/icons';
+// import { clickToCopyIcon } from '../../utils/icons';
+
+import { chatgptPromptIcon, clickToCopyIcon, codeBlockIcon, neonCouponIcon, paletteSwatchesIcon, progressRingIcon, secretApiKeyIcon, terminalInstallIcon } from "../../utils/icons";
 
 const slug = 'click-to-copy';
 
@@ -170,14 +172,14 @@ export const welcomeInfo = (adminUrl = "") => ({
 		],
 	},
 
-	// Changelogs — each list item starts with <strong>Type:</strong> for badges
+	
 	changelogs: [
 				{
 		version: "2.0.3 - 8 July, 2026",
-		type: "update",
+		type: "new",
 		list: [
-			"<strong>Update:</strong> Added compatibility with WordPress 7.0",
-			"<strong>Update:</strong> Minor UI improvements",
+			"<strong>Update:</strong> Add 7+ new blocks.",
+			
 		],
 	},
 		{
@@ -219,100 +221,144 @@ export const demoInfo = {
 	// allInOneLink: 'https://apb.bplugins.com/all-demos-in-one-place/',
 	demos: [
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Default',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/click-to-copy-default/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-1',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/click-to-copy-form-1/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-2',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/click-to-copy-form-2/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-3',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/click-to-copy-form-3/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-4',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-4/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-5',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-5/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-6',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-6/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-7',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-7/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-8',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-8/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-9',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-9/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-10',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-10/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-11',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-11/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-12',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-12/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-13',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-13/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-14',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-14/',
 		},
 		{
-			icon: gridIcon,
+			icon: clickToCopyIcon,
 			title: 'Theme-15',
 			type: 'iframe',
 					url: 'https://bblockswp.com/demo/form-15/',
+		},
+			{
+			icon: terminalInstallIcon,
+			title: 'Terminal-Install',
+			type: 'iframe',
+					url: 'https://bblockswp.com/demo/click-to-copy-terminal-install/',
+		},
+		{
+			icon: secretApiKeyIcon,
+			title: 'Secret API Key',
+			type: 'iframe',
+					url: 'https://bblockswp.com/demo/click-to-copy-secret-api-key/',
+		},
+			{
+			icon: neonCouponIcon,
+			title: 'Neon Coupon',
+			type: 'iframe',
+					url: 'https://bblockswp.com/demo/click-to-copy-neon-coupon/',
+		},
+		{
+			icon: paletteSwatchesIcon,
+			title: 'Palette Swatches',
+			type: 'iframe',
+					url: 'https://bblockswp.com/demo/click-to-copy-palette-swatches/',
+		},
+		
+				{
+			icon: codeBlockIcon,
+			title: 'Code Block',
+			type: 'iframe',
+					url: 'https://bblockswp.com/demo/click-to-copy-code-block/',
+		},
+
+			{
+			icon: progressRingIcon,
+			title: 'Progress Ring',
+			type: 'iframe',
+					url: 'https://bblockswp.com/demo/click-to-copy-progress-ring/',
+		},
+			{
+			icon: chatgptPromptIcon,
+			title: 'ChatGPT Prompt',
+			type: 'iframe',
+					url: 'https://bblockswp.com/demo/click-to-copy-prompt-block/',
 		},
 		]
 
